@@ -1,0 +1,39 @@
+{
+  "name": "@campusmart/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@campusmart/shared-types": "*",
+    "@campusmart/validation": "*",
+    "@reduxjs/toolkit": "^2.2.3",
+    "@tanstack/react-query": "^5.29.2",
+    "axios": "^1.6.8",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.51.3",
+    "react-redux": "^9.1.1",
+    "socket.io-client": "^4.7.5",
+    "tailwind-merge": "^2.2.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^20.12.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
+  }
+}
