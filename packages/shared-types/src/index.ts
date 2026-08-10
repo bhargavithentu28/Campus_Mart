@@ -40,6 +40,13 @@ export type ProductCondition =
   | 'FAIR'
   | 'POOR';
 
+// Report Statuses
+export type ReportStatus =
+  | 'PENDING'
+  | 'UNDER_REVIEW'
+  | 'RESOLVED'
+  | 'DISMISSED';
+
 // Core Domain Interfaces
 export interface IUser {
   id: string;
