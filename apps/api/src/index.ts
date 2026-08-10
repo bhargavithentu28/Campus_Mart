@@ -67,7 +67,23 @@ app.use('/api/v1/upload', uploadRoutes);
 app.use('/api/v1/chats', chatRoutes);
 app.use('/api/v1/admin', adminRoutes);
 
-// Health Check
+// Health Checks
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'online',
+    service: 'CampusMart REST API v1 Core Services',
+    timestamp: new Date()
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'online',
+    service: 'CampusMart REST API v1 Core Services',
+    timestamp: new Date()
+  });
+});
+
 app.get('/api/v1/health', (req, res) => {
   res.status(200).json({
     status: 'online',
@@ -140,9 +156,10 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 // Start Server
 async function startServer() {
-  server.listen(PORT, () => {
+  const portNumber = Number(PORT) || 5000;
+  server.listen(portNumber, '0.0.0.0', () => {
     console.log('\x1b[35m%s\x1b[0m', `🚀 ==========================================`);
-    console.log('\x1b[35m%s\x1b[0m', `🚀 CAMPUSMART API SERVER RUNNING ON PORT ${PORT}`);
+    console.log('\x1b[35m%s\x1b[0m', `🚀 CAMPUSMART API SERVER RUNNING ON PORT ${portNumber} (0.0.0.0)`);
     console.log('\x1b[35m%s\x1b[0m', `🚀 CORE SERVICES & REPOSITORIES ACTIVE`);
     console.log('\x1b[35m%s\x1b[0m', `🚀 ==========================================`);
   });
