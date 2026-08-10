@@ -11,7 +11,8 @@
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "dev:api": "npm run dev --workspace=apps/api",
-    "dev:web": "npm run dev --workspace=apps/web"
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build:render": "npm install && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/validation && npx prisma generate --schema=apps/api/prisma/schema.prisma && npm run build --workspace=apps/api"
   },
   "devDependencies": {
     "typescript": "^5.4.5"
