@@ -3,7 +3,7 @@ services:
     name: campusmart-api
     env: node
     rootDir: .
-    buildCommand: npm install && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/validation && npx prisma generate --schema=apps/api/prisma/schema.prisma && npm run build --workspace=apps/api
+    buildCommand: npm run build:render
     startCommand: npm run start --workspace=apps/api
     healthCheckPath: /api/v1/health
     envVars:
