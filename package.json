@@ -15,6 +15,9 @@
     "build:render": "npm install --include=dev && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/validation && npx prisma generate --schema=apps/api/prisma/schema.prisma && npm run build --workspace=apps/api",
     "build:vercel": "npm run build --workspace=packages/shared-types && npm run build --workspace=packages/validation && npm run build --workspace=apps/web"
   },
+  "engines": {
+    "node": ">=20.0.0 <24.0.0"
+  },
   "devDependencies": {
     "typescript": "^5.4.5"
   }
